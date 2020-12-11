@@ -124,19 +124,24 @@ export default {
     return {
       TaskList: [
         {
-          title: "Get Groceries",
-          due: "Fri, Aug 20",
+          title: "Complete Ten Push Ups",
+          due: "Sun, Dec 20",
           completed: false,
         },
 
         {
-          title: "Walk the Dog",
-          due: "Mon, Aug 25",
+          title: "Interview scheduled for Mike",
+          due: "Wed, Dec 25",
           completed: false,
         },
         {
-          title: "Meeting with the folks at the office",
-          due: "Sat, Aug 30",
+          title: "Meeting",
+          due: "Sat, Dec 30",
+          completed: false,
+        },
+        {
+          title: "Party at Jason's House",
+          due: "Thu, Dec 10",
           completed: true,
         },
       ],
@@ -211,7 +216,7 @@ img {
 }
 .Done-item {
   display: grid;
-  grid-template-columns: 3fr 14fr;
+  grid-template-columns: 5fr 14fr;
   height: 71px;
 }
 
