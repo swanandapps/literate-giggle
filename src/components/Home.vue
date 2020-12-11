@@ -1,12 +1,16 @@
 /* eslint-disable vue/no-dupe-keys */
 /* eslint-disable vue/no-dupe-keys */
 <template>
-  <div class="hello">
-    <div>
+  <div>
+    <div class="main">
       <div class="item">
-        <h1>Hello, Swanand Kadam</h1>
+        <div>
+          <h1>Hello, Swanand Kadam</h1>
+        </div>
 
-        <img src="../assets/0.jpg" class="profile" alt="" />
+        <div>
+          <img src="../assets/0.jpg" class="profile" alt="" />
+        </div>
       </div>
 
       <p>You have {{ TaskList.length }} tasks</p>
@@ -34,7 +38,7 @@
             <div class="item">
               <h3>{{ item.title }}</h3>
 
-              <md-icon>alarm</md-icon>
+              <md-icon class="clock">alarm</md-icon>
             </div>
 
             <p>Due {{ item.due }}</p>
@@ -49,7 +53,7 @@
           <drag class="drag" :transfer-data="{ draggable }">
             <div class="Done-item">
               <div class="icon">
-                <md-icon>done</md-icon>
+                <md-icon class="done">done</md-icon>
               </div>
               <div class="metadata">
                 <h3>{{ item.title }}</h3>
@@ -198,8 +202,14 @@ export default {
 }
 .item {
   display: grid;
-  grid-template-columns: 14fr 1fr;
-  width: 52em;
+  grid-template-columns: 70% 30%;
+
+  width: 100%;
+}
+
+h1 {
+  width: 100%;
+  font-size: 150%;
 }
 .grid {
   display: grid;
@@ -212,7 +222,8 @@ export default {
   padding: 0%;
 }
 img {
-  margin-left: 64%;
+  margin-left: 22%;
+  width: 39%;
 }
 .Done-item {
   display: grid;
@@ -227,9 +238,11 @@ img {
   background-color: greenyellow;
   height: 71px;
 }
-.md-icon {
+.clock {
   width: 100%;
   height: 100%;
+
+  margin-left: 28%;
 }
 
 .metadata {
@@ -266,7 +279,6 @@ p {
   margin-bottom: 20px;
   box-shadow: 0px 3px 8px -1px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  display: grid;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -274,6 +286,11 @@ p {
 .md-title {
   color: black;
   font-weight: 900;
+}
+
+.done {
+  margin: auto;
+  height: 100%;
 }
 ul {
   list-style-type: none;
@@ -301,6 +318,35 @@ a {
   box-shadow: 0px 3px 8px -1px rgba(0, 0, 0, 0.2);
 }
 
+@media only screen and (min-device-width: 319px) and (max-device-width: 820px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+  .addtask__container {
+    position: absolute;
+    left: 0;
+    bottom: 20%;
+    right: 0;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    width: 100px;
+    z-index: 2000;
+    background: whitesmoke;
+    height: 82%;
+    width: 98%;
+    box-shadow: 0px 3px 8px -1px rgba(0, 0, 0, 0.2);
+  }
+  .AddButton {
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    z-index: 2000;
+
+    height: 10%;
+    width: 80%;
+    box-shadow: 0px 3px 8px -1px rgba(0, 0, 0, 0.2);
+    top: 79%;
+  }
+}
+
 input[type="text"] {
   width: 100%;
   margin: 0 5%;
@@ -319,13 +365,11 @@ input[type="text"] {
   position: absolute;
   left: 0;
   right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100px;
+
+  width: 96%;
   z-index: 2000;
   background: whitesmoke;
   height: 10%;
-  width: 55%;
   box-shadow: 0px 3px 8px -1px rgba(0, 0, 0, 0.2);
   top: 80%;
 }
@@ -353,7 +397,7 @@ input[type="text"]::placeholder {
 }
 
 .profile {
-  width: 60px;
+  width: 46px;
   border-radius: 50%;
 }
 </style>
